@@ -13,6 +13,7 @@ describe('Game2', function () {
     const { game } = await loadFixture(deployContractAndSetVariables);
 
     // press all the right switches to win this stage
+    await Promise.all([20, 47, 212].map((n) => game.switchOn(n)));
 
     await game.win();
 
